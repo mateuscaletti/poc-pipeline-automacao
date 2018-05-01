@@ -1,31 +1,25 @@
 #!/bin/bash -x
 
 #
-#   Regression Test Script for performing regression testing
-#   
-#   Note: Caution should be exercised where more than one set
-#   of test suites exist in the same soapui project
-#
-#   Script invokes SOAPUI testrunner to perform tests
-#
-#   Script arguments:
-#       target host
+#   Based on https://stackoverflow.com/questions/6648244/how-to-integrate-soapui-with-jenkins
 #
 
 if [ $# -ne 1 ];
 then
-    echo "Usage: $0 target_host"
+    echo "Usage: $0 project file name"
     exit 1
 fi
-TargetHost=$1
+
 curdir=`pwd`
-ProjectFile=$curdir/testing/SoapUI/YourProject.xml
-SOAPUI_HOME=/soapuipath/soapui
+SoapuiProjectBase=$curdir/../project/soapui_projects/
+SOAPUI_HOME=/opt/SoapUI-5.4.0
 TEST_RUNNER=testrunner.sh
+
+ProjectFile=$SoapuiProjectBase/$1
 
 if [ ! -f "$ProjectFile" ];
 then
-    echo "Project File does not exist"
+    echo "Project File ($ProjectFile) does not exist"
     exit 1
 fi
 ###############################################################################################
@@ -58,7 +52,7 @@ check_status()
 
 
 cd $SOAPUI_HOME/bin
-bash -x ./$TEST_RUNNER -s"TestSuite 1" -c"TestCase 1 - Sanity Tests" -ehttps://$TargetHost:port/testurl "$ProjectFile"
-check_status $? "Failed to pass regression testing "
+bash -x ./$TEST_RUNNER "$ProjectFile"
+#check_status $? "Failed to pass regression testing "
 
 cd "$curdir"
