@@ -12,12 +12,7 @@ pipeline {
             steps {
                 echo 'Reporting test...'
 				sh 'cd $WORKSPACE/results'
-				sh 'cat SuiteCEP-CT_0001_Valida_CEP-HTTP_Chama_WS_CEP-0-OK.txt'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+				sh 'ls'
             }
         }
     }
