@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="7f07e725-2d19-4ac1-bc6c-28ad20c13495" activeEnvironment="Default" name="PocPipeline" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="502129ae-7fa3-49f3-858e-f5ba052755db" wsaVersion="NONE" name="TempConvertSoap12" type="wsdl" bindingName="{https://www.w3schools.com/xml/}TempConvertSoap12" soapVersion="1_2" anonymous="optional" definition="https://www.w3schools.com/xml/tempconvert.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://www.w3schools.com/xml/tempconvert.asmx</con:endpoint></con:endpoints><con:operation id="32882f56-ef95-4c48-8383-1177ca853857" isOneWay="false" action="https://www.w3schools.com/xml/CelsiusToFahrenheit" name="CelsiusToFahrenheit" bindingOperationName="CelsiusToFahrenheit" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4c7d9fc9-7e7f-4bf9-b486-04264f295d12" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.w3schools.com/xml/tempconvert.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:x/="https://www.w3schools.com/xml/">\r
+<con:soapui-project id="7f07e725-2d19-4ac1-bc6c-28ad20c13495" activeEnvironment="Default" name="PocPipeline" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="SuiteCEP"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value="C:\Users\Mateus_Caletti\Desktop\scm\github\mateuscaletti\poc-pipeline-automacao\project"/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="502129ae-7fa3-49f3-858e-f5ba052755db" wsaVersion="NONE" name="TempConvertSoap12" type="wsdl" bindingName="{https://www.w3schools.com/xml/}TempConvertSoap12" soapVersion="1_2" anonymous="optional" definition="https://www.w3schools.com/xml/tempconvert.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://www.w3schools.com/xml/tempconvert.asmx</con:endpoint></con:endpoints><con:operation id="32882f56-ef95-4c48-8383-1177ca853857" isOneWay="false" action="https://www.w3schools.com/xml/CelsiusToFahrenheit" name="CelsiusToFahrenheit" bindingOperationName="CelsiusToFahrenheit" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4c7d9fc9-7e7f-4bf9-b486-04264f295d12" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.w3schools.com/xml/tempconvert.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:x/="https://www.w3schools.com/xml/">\r
    <soap:Header/>\r
    <soap:Body>\r
       <x/:CelsiusToFahrenheit>\r
@@ -183,4 +214,19 @@
          <x/:Fahrenheit>?</x/:Fahrenheit>\r
       </x/:FahrenheitToCelsius>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.w3schools.com/xml/FahrenheitToCelsius"/></con:call></con:operation></con:interface><con:testSuite id="02f85887-5d97-42e8-8805-ab6dc5f065cc" name="SuiteCEP"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9cd4e39b-ace2-456a-b26d-ab9bd8f0667c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CT_0001_Valida_CEP" searchProperties="true"><con:settings/><con:testStep type="httprequest" name="HTTP_Chama_WS_CEP" id="74450138-872a-457e-b01a-f16b230d0acd"><con:settings/><con:config method="GET" xsi:type="con:HttpRequest" id="e4601bad-4658-4605-9a8f-d98a0d8c5039" name="HTTP_Chama_WS_CEP" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://viacep.com.br/ws/01001000/xml/</con:endpoint><con:request/><con:assertion type="Simple Contains" id="372bb495-3504-445e-ab0f-3b0bb200ef3f" name="Contains"><con:configuration><token>&lt;uf>SP&lt;/uf></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.w3schools.com/xml/FahrenheitToCelsius"/></con:call></con:operation></con:interface><con:testSuite id="02f85887-5d97-42e8-8805-ab6dc5f065cc" name="SuiteCEP"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9cd4e39b-ace2-456a-b26d-ab9bd8f0667c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CT_0001_Valida_CEP" searchProperties="true"><con:settings/><con:testStep type="httprequest" name="HTTP_Chama_WS_CEP" id="74450138-872a-457e-b01a-f16b230d0acd"><con:settings/><con:config method="GET" xsi:type="con:HttpRequest" id="e4601bad-4658-4605-9a8f-d98a0d8c5039" name="HTTP_Chama_WS_CEP" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://viacep.com.br/ws/01001000/xml/</con:endpoint><con:request/><con:assertion type="Simple Contains" id="372bb495-3504-445e-ab0f-3b0bb200ef3f" name="Contains"><con:configuration><token>&lt;uf>SP&lt;/uf></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:config></con:testStep><con:testStep type="groovy" name="Reporting" id="71dfa908-8d59-4775-83c3-28244fed6af7"><con:settings/><con:config><script>import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
+def projectDir = context.expand( '${projectDir}' )
+
+def failedTestCase = 0;
+def htmlReporter = new ExtentHtmlReporter(projectDir+"\\SampleReport.html");
+def extent = new ExtentReports();
+extent.attachReporter(htmlReporter);
+
+def extentTest = extent.createTest("TESTE", "TESTE");
+extentTest.pass("TESTE OK");
+
+extent.flush();</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
