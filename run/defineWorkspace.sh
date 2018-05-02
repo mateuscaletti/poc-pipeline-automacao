@@ -2,4 +2,4 @@
 
 WORKSPACE=$1
 
-sed -i "s|\[workspace_dir\]|$WORKSPACE|g" ReportProperties.properties
+sed -i "s|\[workspace_dir\]|$WORKSPACE|g" $WORKSPACE/project/soapui_projects/ReportProperties.properties

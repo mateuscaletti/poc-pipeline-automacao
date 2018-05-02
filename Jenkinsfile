@@ -4,7 +4,7 @@ pipeline {
     stages {
 		stage('Prepare environment') {
 			steps {
-				sh 'sed -i "s|\[workspace_dir\]|$WORKSPACE|g" ReportProperties.properties'
+				sh '$WORKSPACE/run/defineWorkspace.sh $WORKSPACE'
 			}
 		}
         stage('Soapui Test') {
