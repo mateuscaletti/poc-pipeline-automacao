@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-		stage('Prepare enviroment') {
+		stage('Prepare environment') {
 			steps {
 				sh 'sed -i "s|\[workspace_dir\]|$WORKSPACE|g" ReportProperties.properties'
 			}
