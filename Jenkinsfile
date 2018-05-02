@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+		stage('Prepare enviroment') {
+			steps {
+				sh 'sed -i "s|\[workspace_dir\]|$WORKSPACE|g" ReportProperties.properties'
+			}
+		}
         stage('Soapui Test') {
             steps {
                 echo 'Running SoapUI test...'
