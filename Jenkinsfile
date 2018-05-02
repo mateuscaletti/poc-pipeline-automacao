@@ -1,3 +1,9 @@
+properties([
+	parameters([
+		string(name: 'RESULT_DIR', defaultValue: '', description: 'Caminho dos resultados', )
+	])
+])
+
 pipeline {
     agent any
 

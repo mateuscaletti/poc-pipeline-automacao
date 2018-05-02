@@ -219,10 +219,15 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-def projectDir = context.expand( '${projectDir}' )
+def projectDir = context.expand( '${projectDir}' );
+def resultsDir = context.expand( '${resultsDir}' );
+
+if (resultsDir.isEmpty())  {
+	resultsDir = projectDir;
+}
 
 def failedTestCase = 0;
-def htmlReporter = new ExtentHtmlReporter(projectDir+"\\SampleReport.html");
+def htmlReporter = new ExtentHtmlReporter(resultsDir+"\\SampleReport.html");
 def extent = new ExtentReports();
 extent.attachReporter(htmlReporter);
 
