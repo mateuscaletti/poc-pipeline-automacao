@@ -4,7 +4,7 @@ pipeline {
     stages {
 		stage('Prepare environment') {
 			steps {
-				sh '$WORKSPACE/run/defineWorkspace.sh "$WORKSPACE"'
+				sh 'sh $WORKSPACE/run/defineWorkspace.sh $WORKSPACE'
 			}
 		}
         stage('Soapui Test') {
