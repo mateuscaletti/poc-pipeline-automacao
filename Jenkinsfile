@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Reporting test...'
 				sh 'ls $WORKSPACE'
+				sh 'ls $WORKSPACE/results'
 				sh 'cat $WORKSPACE/results/SuiteCEP-CT_0001_Valida_CEP-HTTP_Chama_WS_CEP-0-OK.txt'
             }
         }
