@@ -21,6 +21,7 @@ pipeline {
 				sh 'ls $WORKSPACE'
 				sh 'ls $WORKSPACE/results/instance_$BUILD_NUMBER'
 				sh 'cat $WORKSPACE/results/instance_$BUILD_NUMBER/SuiteCEP-CT_0001_Valida_CEP-HTTP_Chama_WS_CEP-0-OK.txt'
+				sh 'tar -czvf instance_$BUILD_NUMBER.tar.gz $WORKSPACE/results/instance_$BUILD_NUMBER'
             }
         }
     }
