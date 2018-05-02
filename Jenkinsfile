@@ -22,7 +22,7 @@ pipeline {
 				sh 'ls $WORKSPACE/results/instance_$BUILD_NUMBER'
 				sh 'cat $WORKSPACE/results/instance_$BUILD_NUMBER/SuiteCEP-CT_0001_Valida_CEP-HTTP_Chama_WS_CEP-0-OK.txt'
 				sh 'tar -czvf $WORKSPACE/results/instance_$BUILD_NUMBER.tar.gz $WORKSPACE/results/instance_$BUILD_NUMBER'
-				emailext attachmentsPattern: '$WORKSPACE/results/instance_$BUILD_NUMBER.tar.gz', body: 'Pipeline Automacao - Build # $BUILD_NUMBER - $BUILD_STATUS!', subject: 'Pipeline Automacao - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'mateus@caletti.com.br'
+				emailext attachmentsPattern: '**/instance_$BUILD_NUMBER.tar.gz', body: 'Pipeline Automacao - Build # $BUILD_NUMBER - $BUILD_STATUS!', subject: 'Pipeline Automacao - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'mateus@caletti.com.br'
             }
         }
     }
