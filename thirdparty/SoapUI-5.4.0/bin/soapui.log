@@ -1,0 +1,11 @@
+2018-05-01 20:59:47,898 INFO  [DefaultSoapUICore] Creating new settings at [/root/soapui-settings.xml]
+2018-05-01 20:59:49,573 INFO  [PluginManager] 0 plugins loaded in 2 ms
+2018-05-01 20:59:49,573 INFO  [DefaultSoapUICore] All plugins loaded
+2018-05-01 20:59:52,165 INFO  [WsdlProject] Loaded project from [file:/tmp/poc/poc-pipeline-automacao/run/../project/soapui_projects/PocPipeline-soapui-project.xml]
+2018-05-01 20:59:52,215 INFO  [SoapUITestCaseRunner] Running SoapUI tests in project [PocPipeline]
+2018-05-01 20:59:52,216 INFO  [SoapUITestCaseRunner] Running Project [PocPipeline], runType = SEQUENTIAL
+2018-05-01 20:59:52,249 INFO  [SoapUITestCaseRunner] Running SoapUI testcase [CT_0001_Valida_CEP]
+2018-05-01 20:59:52,261 INFO  [SoapUITestCaseRunner] running step [HTTP_Chama_WS_CEP]
+2018-05-01 20:59:53,371 INFO  [SoapUITestCaseRunner] Assertion [Contains] has status VALID
+2018-05-01 20:59:53,376 INFO  [SoapUITestCaseRunner] Finished running SoapUI testcase [CT_0001_Valida_CEP], time taken: 857ms, status: FINISHED
+2018-05-01 20:59:53,384 INFO  [SoapUITestCaseRunner] Project [PocPipeline] finished with status [FINISHED] in 1163ms
