@@ -17,7 +17,7 @@ echo "Variável PROPERTIES_FILE = '$PROPERTIES_FILE'"
 RESULTS_DIR=$WORKSPACE/results/instance_$BUILD_NUMBER
 echo "Variável RESULTS_DIR = '$RESULTS_DIR'"
 
-RUN_COMMAND=$WORKSPACE/thirdparty/soapui-5.4.0/bin/testrunner.sh $WORKSPACE/projects/soapui-poc-pipeline/PocPipeline-soapui-project.xml -a -f$WORKSPACE/results/instance_$BUILD_NUMBER
+RUN_COMMAND="$WORKSPACE/thirdparty/soapui-5.4.0/bin/testrunner.sh $WORKSPACE/projects/soapui-poc-pipeline/PocPipeline-soapui-project.xml -a -f$WORKSPACE/results/instance_$BUILD_NUMBER"
 echo "Variável RUN_COMMAND = '$RUN_COMMAND'"
 
 echo "Variáveis de ambiente definidas!"
