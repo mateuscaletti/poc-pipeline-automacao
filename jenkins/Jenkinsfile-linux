@@ -5,14 +5,14 @@ pipeline {
 		stage('Prepare environment') {
 			steps {
 				sh 'mkdir $WORKSPACE/results/instance_$BUILD_NUMBER'
-				sh 'sh $WORKSPACE/run/defineWorkspaceDir.sh $WORKSPACE'
-				sh 'sh $WORKSPACE/run/defineResultDir.sh $WORKSPACE $WORKSPACE/results/instance_$BUILD_NUMBER'
+				sh 'sh $WORKSPACE/jenkins/scripts-linux/defineWorkspaceDir.sh $WORKSPACE'
+				sh 'sh $WORKSPACE/jenkins/scripts-linux/defineResultDir.sh $WORKSPACE $WORKSPACE/results/instance_$BUILD_NUMBER'
 			}
 		}
         stage('Soapui Test') {
             steps {
                 echo 'Running SoapUI test...'
-				sh '$WORKSPACE/thirdparty/SoapUI-5.4.0/bin/testrunner.sh $WORKSPACE/project/soapui_projects/PocPipeline-soapui-project.xml -a -f$WORKSPACE/results/instance_$BUILD_NUMBER'
+				sh '$WORKSPACE/thirdparty/soapui-5.4.0/bin/testrunner.sh $WORKSPACE/projects/soapui-poc-pipeline/PocPipeline-soapui-project.xml -a -f$WORKSPACE/results/instance_$BUILD_NUMBER'
             }
         }
         stage('Reporting') {
