@@ -11,7 +11,7 @@ echo "Variável WORKSPACE = '$WORKSPACE'"
 BUILD_NUMBER=$2
 echo "Variável BUILD_NUMBER = '$BUILD_NUMBER'"
 
-PROPERTIES_FILE=$WORKSPACE/project/soapui_projects/ReportProperties.properties
+PROPERTIES_FILE=$WORKSPACE/project/soapui-poc-pipeline/ReportProperties.properties
 echo "Variável PROPERTIES_FILE = '$PROPERTIES_FILE'"
 
 RESULTS_DIR=$WORKSPACE/results/instance_$BUILD_NUMBER
