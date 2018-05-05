@@ -10,8 +10,11 @@ for f in $WORKSPACE/projects/* ; do
 	PROJECT_NAME=$(basename $f)
 	
     if [ -d ${f} ] && [ -e ${SCRIPT_DEFINE} ]; then
-		echo "Projeto '$SCRIPT_DEFINE' inicializando..."
-		sh $SCRIPT_DEFINE $WORKSPACE $BUILD_NUMBER >> $WORKSPACE/results/instance_$BUILD_NUMBER/execution_$PROJECT_NAME.log
-		echo "Projeto '$SCRIPT_DEFINE' finalizado!"
+		echo "Projeto '$PROJECT_NAME' inicializando..."
+		echo "Criando diretório dos resultados do projeto..."
+		mkdir $WORKSPACE/results/instance_$BUILD_NUMBER/$PROJECT_NAME
+		echo "Executando o projeto"
+		sh $SCRIPT_DEFINE $WORKSPACE $BUILD_NUMBER >> $WORKSPACE/results/instance_$BUILD_NUMBER/$PROJECT_NAME/execution_$PROJECT_NAME.log
+		echo "Projeto '$PROJECT_NAME' finalizado!"
     fi
 done
