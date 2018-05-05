@@ -5,9 +5,7 @@ BUILD_NUMBER=$2
 
 echo "Inicializando os projetos..."
 
-for f in $WORKSPACE/projects/*; do
-	echo "Inicializando os projetos..."
-	
+for f in $WORKSPACE/projects/* ; do
     SCRIPT_DEFINE="$f/startProject.sh $WORKSPACE $BUILD_NUMBER"
 	echo $SCRIPT_DEFINE
 	
