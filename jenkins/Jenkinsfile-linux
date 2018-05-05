@@ -2,17 +2,10 @@ pipeline {
     agent any
 
     stages {
-		stage('Prepare environment') {
-			steps {
-				sh 'mkdir $WORKSPACE/results/instance_$BUILD_NUMBER'
-				sh 'sh $WORKSPACE/jenkins/scripts-linux/defineWorkspaceDir.sh $WORKSPACE'
-				sh 'sh $WORKSPACE/jenkins/scripts-linux/defineResultDir.sh $WORKSPACE $WORKSPACE/results/instance_$BUILD_NUMBER'
-			}
-		}
-        stage('Soapui Test') {
+        stage('Running tests') {
             steps {
                 echo 'Running SoapUI test...'
-				sh '$WORKSPACE/thirdparty/soapui-5.4.0/bin/testrunner.sh $WORKSPACE/projects/soapui-poc-pipeline/PocPipeline-soapui-project.xml -a -f$WORKSPACE/results/instance_$BUILD_NUMBER'
+				sh '$WORKSPACE/jenkins/scripts-linux/startProjects.sh $WORKSPACE $BUILD_NUMBER > $WORKSPACE/results/instance_$BUILD_NUMBER/execution.log'
             }
         }
         stage('Reporting') {
