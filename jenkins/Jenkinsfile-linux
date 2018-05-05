@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+		stage('Prepare environment') {
+			steps {
+				sh 'mkdir $WORKSPACE/results/instance_$BUILD_NUMBER'
+			}
+		}
         stage('Running tests') {
             steps {
                 echo 'Running SoapUI test...'
