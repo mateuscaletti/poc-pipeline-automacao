@@ -6,7 +6,7 @@ BUILD_NUMBER=$2
 echo "Inicializando os projetos..."
 
 for f in $WORKSPACE/projects/* ; do
-    SCRIPT_DEFINE="sh $f/startProject.sh"
+    SCRIPT_DEFINE="$f/startProject.sh"
 	
     if [ -d ${f} ] && [ -e ${SCRIPT_DEFINE} ]; then
 		echo "Projeto '$SCRIPT_DEFINE' inicializando..."
