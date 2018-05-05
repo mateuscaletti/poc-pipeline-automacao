@@ -29,9 +29,6 @@ echo "Variáveis de ambiente definidas!"
 # -------------------------------------------------------------------------------------------- #
 echo "Configurando arquivos de propriedades..."
 
-echo "Criando diretório de logs"
-mkdir $RESULTS_DIR
-
 echo "Substituindo a variável 'workspace_dir' com valor '$WORKSPACE' no arquivo '$PROPERTIES_FILE'"
 sed -i "s|\[workspace_dir\]|$WORKSPACE|g" $PROPERTIES_FILE
 
