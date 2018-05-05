@@ -8,9 +8,8 @@ echo "Inicializando os projetos..."
 for f in $WORKSPACE/projects/*; do
 	echo "Inicializando os projetos..."
 	
-	echo $SCRIPT_DEFINE
     SCRIPT_DEFINE="$f/startProject.sh $WORKSPACE $BUILD_NUMBER"
-	
+	echo $SCRIPT_DEFINE
 	
     if [ -d ${f} ] && [ -e ${SCRIPT_DEFINE} ]; then
 		echo "Projeto '$SCRIPT_DEFINE' inicializando..."
