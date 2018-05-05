@@ -10,7 +10,7 @@ pipeline {
         stage('Running tests') {
             steps {
                 echo 'Running SoapUI test...'
-				sh 'sh $WORKSPACE/jenkins/scripts-linux/startProjects.sh $WORKSPACE $BUILD_NUMBER > $WORKSPACE/results/instance_$BUILD_NUMBER/pipeline-execution.log'
+				sh 'sh $WORKSPACE/jenkins/scripts-linux/startProjects.sh $WORKSPACE $BUILD_NUMBER >> $WORKSPACE/results/instance_$BUILD_NUMBER/pipeline-execution.log'
             }
         }
         stage('Reporting') {
