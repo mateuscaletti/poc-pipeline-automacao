@@ -10,7 +10,7 @@ pipeline {
         stage('Running tests') {
             steps {
                 echo 'Running SoapUI test...'
-				sh 'sh $WORKSPACE/jenkins/scripts-linux/startProjects.sh $WORKSPACE $BUILD_NUMBER > $WORKSPACE/results/instance_$BUILD_NUMBER/execution.log'
+				sh 'sh $WORKSPACE/jenkins/scripts-linux/startProjects.sh $WORKSPACE $BUILD_NUMBER > $WORKSPACE/results/instance_$BUILD_NUMBER/pipeline-execution.log'
             }
         }
         stage('Reporting') {
@@ -19,7 +19,7 @@ pipeline {
 				sh 'ls $WORKSPACE'
 				sh 'ls $WORKSPACE/results/instance_$BUILD_NUMBER'
 				sh 'tar -czvf $WORKSPACE/results/instance_$BUILD_NUMBER.tar.gz $WORKSPACE/results/instance_$BUILD_NUMBER'
-				
+				emailext attachmentsPattern: '**/instance_$BUILD_NUMBER.tar.gz', body: 'Pipeline Automacao - Build # $BUILD_NUMBER - $BUILD_STATUS!', subject: 'Pipeline Automacao - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'mateus@caletti.com.br'
             }
         }
     }
