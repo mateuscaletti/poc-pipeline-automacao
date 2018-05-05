@@ -10,7 +10,7 @@ for f in $WORKSPACE/projects/* ; do
 	
     if [ -d ${f} ] && [ -e ${SCRIPT_DEFINE} ]; then
 		echo "Projeto '$SCRIPT_DEFINE' inicializando..."
-		sh $SCRIPT_DEFINE $WORKSPACE $BUILD_NUMBER > $WORKSPACE/results/instance_$BUILD_NUMBER/$(basename $f)-execution.log
+		sh $SCRIPT_DEFINE $WORKSPACE $BUILD_NUMBER > $WORKSPACE/results/instance_$BUILD_NUMBER/$(basename $f)/$(basename $f)-execution.log
 		echo "Projeto '$SCRIPT_DEFINE' finalizado!"
     fi
 done
