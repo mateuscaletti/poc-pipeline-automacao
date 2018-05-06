@@ -1,4 +1,4 @@
-@echo on
+@echo off
 
 SetLocal EnableDelayedExpansion 
 
@@ -14,7 +14,7 @@ for /d %%A in ("%WORKSPACE%"\projects\%STAGE_NAME%\*) do (
 	
 	echo Verificando se existe arquivo '!SCRIPT_DEFINE!' do projeto '!PROJECT_NAME!' ...
 	if exist !SCRIPT_DEFINE! (
-		SET RESULT_DIR=%WORKSPACE%\results\instance_%BUILD_NUMBER%\%STAGE_NAME%\!PROJECT_NAME!
+		SET RESULT_DIR="%WORKSPACE%\results\instance_%BUILD_NUMBER%\%STAGE_NAME%\!PROJECT_NAME!"
 		SET LOG_EXECUTION_NAME=!RESULT_DIR!\execution_%STAGE_NAME%_!PROJECT_NAME!.log
 		
 		echo Projeto !PROJECT_NAME! inicializando...
