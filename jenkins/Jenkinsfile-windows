@@ -4,9 +4,15 @@ pipeline {
     stages {
 		stage('Prepare environment') {
 			steps {
-				bat 'mkdir %WORKSPACE%\\results\\instance_%BUILD_NUMBER%'
+				bat 'mkdir "%WORKSPACE%\\results\\instance_%BUILD_NUMBER%"'
 			}
 		}
+		stage('Running tests') {
+            steps {
+                echo 'Running SoapUI test...'
+				bat 'CALL %WORKSPACE%\jenkins\scripts-windows\startProjects.bat "%WORKSPACE%" %BUILD_NUMBER% "stage1" >> %WORKSPACE%\results\instance_%BUILD_NUMBER%\pipeline-execution.log'
+            }
+        }
     }
 }
 
