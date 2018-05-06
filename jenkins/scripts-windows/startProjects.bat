@@ -10,7 +10,7 @@ ECHO Inicializando os projetos do %STAGE_NAME%...
 
 ECHO "WORKSPACE = %WORKSPACE%\projects\%STAGE_NAME%"
 
-for /d %%A in ("%WORKSPACE%"\projects\*) do (
+for /d %%A in ("%WORKSPACE%"\projects\%STAGE_NAME%\*) do (
 	SET SCRIPT_DEFINE=%%A\startProject.bat
 	SET PROJECT_NAME=%%~nxA
 	
