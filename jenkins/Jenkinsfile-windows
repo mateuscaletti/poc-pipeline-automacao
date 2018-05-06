@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    stages {
+		stage('Prepare environment') {
+			steps {
+				bat 'mkdir $WORKSPACE/results/instance_$BUILD_NUMBER'
+			}
+		}
+    }
+}
+
