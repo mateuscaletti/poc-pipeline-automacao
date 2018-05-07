@@ -6,6 +6,8 @@ STAGE_NAME=$3
 
 echo "Inicializando os projetos do $STAGE_NAME..."
 
+mkdir $WORKSPACE/results/instance_$BUILD_NUMBER/$STAGE_NAME
+
 for f in $WORKSPACE/projects/$STAGE_NAME/* ; do
     SCRIPT_DEFINE="$f/startProject.sh"
 	PROJECT_NAME=$(basename $f)
