@@ -21,7 +21,7 @@ for /d %%A in ("%WORKSPACE%"\projects\%STAGE_NAME%\*) do (
 		echo Criando diretório dos resultados do projeto em !RESULT_DIR!...
 		mkdir "!RESULT_DIR:~1,-1!"
 		echo Executando o projeto com log em '!LOG_EXECUTION_NAME!'
-		call !SCRIPT_DEFINE! "%WORKSPACE%" %BUILD_NUMBER% >> "!LOG_EXECUTION_NAME:~1,-1!"
+		call "!SCRIPT_DEFINE!" "%WORKSPACE%" %BUILD_NUMBER% >> "!LOG_EXECUTION_NAME:~1,-1!"
 		echo Projeto '!PROJECT_NAME!' finalizado!
 	)
 )
